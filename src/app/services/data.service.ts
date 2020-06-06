@@ -1,5 +1,5 @@
-import { ItemComponent } from './../layout/item/item.component';
-import { PaycheckComponent } from './../paycheck/paycheck.component';
+import { Item } from '../model/item';
+import { PaycheckComponent } from '../items/paycheck/paycheck.component';
 import { Injectable } from '@angular/core';
 import { Observable, observable, from, BehaviorSubject } from 'rxjs';
 import { take } from 'rxjs/operators';
@@ -9,8 +9,8 @@ import {  } from 'rxjs'
   providedIn: 'root'
 })
 export class DataService {
-  itemsList : ItemComponent[] = []
-  items = new BehaviorSubject<ItemComponent[]>(this.itemsList);
+  itemsList : Item[] = []
+  items = new BehaviorSubject<Item[]>(this.itemsList);
   cast = this.items.asObservable();
 
   constructor() {

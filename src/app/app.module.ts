@@ -24,11 +24,13 @@ import { NavBarComponent } from './layout/nav-bar/nav-bar.component';
 import { SimulationComponent } from './simulation/simulation.component';
 import { ItemBuffetComponent } from './layout/item-buffet/item-buffet.component'
 import { DataService } from './services/data.service';
-import { IncomeComponent } from './income/income.component';
-import { PaycheckComponent } from './paycheck/paycheck.component';
-import { ItemComponent } from './layout/item/item.component';
+import { IncomeComponent } from './items/income/income.component';
+import { PaycheckComponent } from './items/paycheck/paycheck.component';
+import { ItemComponent } from './items/item/item.component';
 import { AddItemComponent } from './layout/add-item/add-item.component';
 import { BarChartComponent } from './layout/bar-chart/bar-chart.component';
+import { MortgageComponent } from './items/mortgage/mortgage.component';
+import { ExpenseComponent } from './items/expense/expense.component';
 
 
 @NgModule({
@@ -41,7 +43,9 @@ import { BarChartComponent } from './layout/bar-chart/bar-chart.component';
     NavBarComponent,
     SimulationComponent,
     ItemBuffetComponent,
-    BarChartComponent
+    BarChartComponent,
+    MortgageComponent,
+    ExpenseComponent
   ],
   imports: [
     BrowserModule,

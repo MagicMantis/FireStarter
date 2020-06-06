@@ -4,11 +4,10 @@
           <item-buffet></item-buffet>
       </div>
       <div class="col-sm-2">
-        <div *ngFor="let income of itemList">
+        <item *ngFor="let income of itemList">
             <paycheck *ngIf="income=='Paycheck'"></paycheck>
-            <income *ngIf="income=='Income'"></income>
-            <mat-divider></mat-divider>
-        </div>
+            <income *ngIf="income=='Income'"></income>  
+        </item>
       </div>
       <div class="col-lg-7">
         <bar-chart></bar-chart>

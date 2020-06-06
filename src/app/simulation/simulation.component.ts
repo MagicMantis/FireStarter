@@ -1,8 +1,6 @@
-import { ItemComponent } from './../layout/item/item.component';
 import { DataService } from './../services/data.service';
-import { PaycheckComponent } from './../paycheck/paycheck.component';
 import { Component, OnInit } from '@angular/core';
-import { IncomeComponent } from '../income/income.component';
+import { Item } from '../model/item';
 
 @Component({
   selector: 'simulation',
@@ -11,7 +9,7 @@ import { IncomeComponent } from '../income/income.component';
 })
 export class SimulationComponent implements OnInit {
 
-  itemList: ItemComponent[] = []
+  itemList: Item[] = []
 
   constructor(private data : DataService) { 
 

@@ -18,4 +18,28 @@ export class Mortgage extends Item {
         this._extraPayment = _extraPayment;
     }
 
+    get homeValue() {
+        return this._homeValue
+    }
+    
+    get downPayment() {
+        return this._downPayment
+    }
+
+    get mortgageAmount() {
+        return this._mortgageAmount
+    }
+
+    get annualRate() {
+        return this._annualRate
+    }
+
+    get monthlyPayment() {
+        return this._monthlyPayment
+    }
+
+    get extraPayment() {
+        return this._extraPayment
+    }
+
 }

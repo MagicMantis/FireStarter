@@ -29,7 +29,6 @@ export class ItemBuffetComponent implements OnInit {
   }
 
   addItem(itemType) {
-    console.log(itemType);
     this.data.addItem(itemType)
   }
 

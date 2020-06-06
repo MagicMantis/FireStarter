@@ -7,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IncomeComponent implements OnInit {
 
-  constructor() { }
+  incomeString: string
+  income: number
+
+  constructor() { 
+    this.incomeString = ""
+    this.income = 0
+  }
 
   ngOnInit(): void {
     
+  }
+
+  parse() {
+    this.income = +this.incomeString
   }
 
 }
