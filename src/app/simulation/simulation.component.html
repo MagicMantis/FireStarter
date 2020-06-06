@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="side-bar col-sm-1">
+          <item-buffet></item-buffet>
+      </div>
+      <div class="col-sm-2">
+        <div *ngFor="let income of itemList">
+            <paycheck *ngIf="income=='Paycheck'"></paycheck>
+            <income *ngIf="income=='Income'"></income>
+            <mat-divider></mat-divider>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <bar-chart></bar-chart>
+      </div>
+      <div class="col-sm-2">
+        Ads
+      </div>
+    </div>
+  </div>

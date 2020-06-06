@@ -1,0 +1,9 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <h1>FireStarter</h1>
+      <span class="menu-spacer"></span>
+      <div>
+        <a *ngFor="let link of links" mat-button [routerLink]="link.address"> {{ link.name }} </a>
+      </div>
+    </mat-toolbar-row>
+</mat-toolbar>

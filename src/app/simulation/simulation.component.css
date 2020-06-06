@@ -1,0 +1,8 @@
+.debug {
+    border: solid 1px black;
+}
+
+.side-bar {
+    padding: 0;
+    justify-content: center;
+}
