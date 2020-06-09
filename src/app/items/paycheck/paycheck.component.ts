@@ -12,15 +12,9 @@ export class PaycheckComponent implements OnInit {
   @Input('item') paycheck : Paycheck;
   salaryString: string = '0'
 
-  constructor(private data: DataService) { 
-
-  }
+  constructor(private data: DataService) { }
 
   ngOnInit(): void {
-  }
-
-  get type() : string {
-    return "paycheck"
   }
 
   parse() {

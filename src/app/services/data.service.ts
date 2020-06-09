@@ -38,18 +38,27 @@ export class DataService {
   simulate() : any {
     let data = []
     let value = 0
+    let years = 20
 
-    //for each month in the 10 year simulation
-    for (let i = 0; i < 120; i++) {
-      let income = 0
-      let expense = 0
+    //push first year with initial value
+    data.push(value)
+
+    //for each month in the simulation
+    for (let i = 0; i < (years * 12); i++) {
+
+      // for each item in simulation
       this.itemsList.forEach(item => {
 
+        let income = 0
+        let expense = 0
+
         if (item instanceof Paycheck) {
+          console.log("Adding paycheck", item.income)
           income += item.income;
         }
         // add income
         else if (item instanceof Income) {
+          console.log("Adding income", item.income)
           income += item.income;
         }
         //add expense
@@ -64,7 +73,11 @@ export class DataService {
         value += income - expense;
 
       })
-      data.push(value)
+
+      //every year push the value to the stack
+      if (i % 12 == 11) {
+        data.push(value)
+      } 
 
     }
     console.log(data)

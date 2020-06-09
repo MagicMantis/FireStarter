@@ -24,6 +24,7 @@ import { BarChartComponent } from './layout/bar-chart/bar-chart.component';
 import { MortgageComponent } from './items/mortgage/mortgage.component';
 import { ExpenseComponent } from './items/expense/expense.component';
 import { InvestComponent } from './items/invest/invest.component';
+import { SummaryComponent } from './layout/summary/summary.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { InvestComponent } from './items/invest/invest.component';
     BarChartComponent,
     MortgageComponent,
     ExpenseComponent,
-    InvestComponent
+    InvestComponent,
+    SummaryComponent
   ],
   imports: [
     BrowserModule,

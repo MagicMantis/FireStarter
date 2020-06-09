@@ -1,3 +1,4 @@
+import { DataService } from './../../services/data.service';
 import { Income } from './../../model/income';
 import { Component, OnInit, Input } from '@angular/core';
 
@@ -8,11 +9,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class IncomeComponent implements OnInit {
 
-  @Input('income') income: Income
-  incomeString: string
+  @Input('item') income: Income
+  incomeString: string = '0'
 
-  constructor() { 
-    this.incomeString = ""
+  constructor(private data: DataService) { 
   }
 
   ngOnInit(): void {
@@ -21,6 +21,7 @@ export class IncomeComponent implements OnInit {
 
   parse() {
     this.income.income = +this.incomeString
+    this.data.updateItem()
   }
 
 }
