@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Income } from './../../model/income';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'income',
@@ -7,12 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IncomeComponent implements OnInit {
 
+  @Input('income') income: Income
   incomeString: string
-  income: number
 
   constructor() { 
     this.incomeString = ""
-    this.income = 0
   }
 
   ngOnInit(): void {
@@ -20,7 +20,7 @@ export class IncomeComponent implements OnInit {
   }
 
   parse() {
-    this.income = +this.incomeString
+    this.income.income = +this.incomeString
   }
 
 }

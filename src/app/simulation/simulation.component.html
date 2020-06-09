@@ -5,7 +5,12 @@
       </div>
       <div class="col-sm-2">
         <item *ngFor="let item of itemList">
-            <ng-container *ngComponentOutlet="item.component"></ng-container>
+            <!-- <ng-container *ngComponentOutlet="item.component"></ng-container> -->
+            <paycheck 
+              *ngIf="item instanceof Paycheck"
+              paycheck="item">
+
+            </paycheck>
         </item>
       </div>
       <div class="col-lg-7">

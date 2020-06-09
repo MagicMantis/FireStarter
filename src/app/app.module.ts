@@ -1,3 +1,4 @@
+import { MatComponentsModule } from './mat-components.module';
 // angular modules
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -5,15 +6,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 
-// Material modules
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatCardModule } from '@angular/material/card';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatChipsModule } from '@angular/material/chips';
 
 // Charts module
 import { ChartsModule } from 'ng2-charts'
@@ -53,14 +45,7 @@ import { ExpenseComponent } from './items/expense/expense.component';
     BrowserAnimationsModule,
     FormsModule,
     ChartsModule,
-    MatSidenavModule,
-    MatInputModule,
-    MatIconModule,
-    MatButtonModule,
-    MatCardModule,
-    MatDividerModule,
-    MatToolbarModule,
-    MatChipsModule
+    MatComponentsModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
+import { DataService } from './../../services/data.service';
 import { Component, OnInit, Input } from '@angular/core';
-import { Income } from './../../model/income';
 import { Paycheck } from 'src/app/model/paycheck';
 
 @Component({
@@ -9,12 +9,11 @@ import { Paycheck } from 'src/app/model/paycheck';
 })
 export class PaycheckComponent implements OnInit {
 
-  paycheck: Paycheck;
+  @Input('paycheck') paycheck : Paycheck;
   salaryString: string = '0'
 
-  constructor() { 
-    this.paycheck = new Paycheck("", 0, 0)
-    this.parse()
+  constructor(private data: DataService) { 
+
   }
 
   ngOnInit(): void {
@@ -26,7 +25,6 @@ export class PaycheckComponent implements OnInit {
 
   parse() {
     this.paycheck.salary = +this.salaryString;
-    console.log(this.paycheck.salary)
   }
 
 }
