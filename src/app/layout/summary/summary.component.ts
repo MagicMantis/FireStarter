@@ -15,8 +15,8 @@ export class SummaryComponent implements OnInit {
 
   ngOnInit(): void {
     this.data.simulated.subscribe(result => {
-      this.beginCashFlow = result.beginCashFlow;
-      this.endCashFlow = result.endCashFlow;
+      this.beginCashFlow = result.begin;
+      this.endCashFlow = result.end;
     });
   }
 

@@ -1,3 +1,4 @@
+import { Investment } from './../../model/investment';
 import { Paycheck } from './../../model/paycheck';
 import { Income } from './../../model/income';
 import { Mortgage } from './../../model/mortgage';
@@ -22,10 +23,11 @@ export interface ItemType {
 export class ItemBuffetComponent implements OnInit {
 
   availableItemTypes: ItemType[] = [
-    {type: 'Paycheck', icon: 'attach_money', color: undefined, component: Paycheck},
+    {type: 'Paycheck', icon: 'attach_money', color: 'primary', component: Paycheck},
     {type: 'Income', icon: 'attach_money', color: 'primary', component: Income},
+    {type: 'Investment', icon: 'account_balance', color: 'primary', component: Investment},
     {type: 'Mortgage', icon: 'home', color: 'accent', component: Mortgage},
-    {type: 'Expense', icon: 'delete', color: 'warn', component: Expense}
+    {type: 'Expense', icon: 'credit_card', color: 'accent', component: Expense}
   ];
 
   constructor(private data:DataService) { }

@@ -1,5 +1,4 @@
 import { Item } from './item'
-import { IncomeComponent } from '../items/income/income.component';
 
 export class Income extends Item {
 
@@ -16,4 +15,22 @@ export class Income extends Item {
     set income(x){
         this._income = x;
     }
+
+    get value(): number {
+        return 0;
+    }
+
+    get monthlyValue(): number {
+        return this._income;
+    }
+
+    get monthlyROC(): number {
+        return 0;
+    }
+
+    copy() : Item {
+        return new Income("", this.income)
+    }
+
+    simulate() { }
 }

@@ -39,59 +39,58 @@ export class DataService {
   }
 
   simulate() : any {
-    let data = []
-    let value = 0
-    
-    let result = { 
-      beginCashFlow: 0,
-      endCashFlow: 0
-    }
+    let data = [] //return string
+    let simItems = this.getSimulatedItems();
+    console.log("SIM",simItems)
 
-    //push first year with initial value
-    data.push(value)
+    // calculate net worth at the start
+    let netWorth = 0
+    simItems.forEach(item => {
+      netWorth += item.value
+    });
+    data.push(netWorth) //push first year with initial value
+    
+    // for tracking the beginning and ending cashflow
+    let cashFlowDelta = { 
+      begin: 0,
+      end: 0
+    }
 
     //for each month in the simulation
     for (let i = 0; i < YEARS * 12; i++) {
 
+      let cashFlow = 0
       // for each item in simulation
-      this.itemsList.forEach(item => {
+      simItems.forEach(item => {
+        cashFlow += item.monthlyValue
+        netWorth += cashFlow;
 
-        let income = 0
-        let expense = 0
-
-        if (item instanceof Paycheck) {
-          console.log("Adding paycheck", item.income)
-          income += item.income;
-        }
-        // add income
-        else if (item instanceof Income) {
-          console.log("Adding income", item.income)
-          income += item.income;
-        }
-        //add expense
-        else if (item instanceof Expense) {
-          expense += item.cost;
-        }
-
-        if (item instanceof Mortgage) {
-          expense += item.monthlyPayment
-        }
-
-        value += income - expense;
-
+        netWorth -= item.value
+        item.simulate()
+        netWorth += item.value
       })
 
-      if (i == 0) result.beginCashFlow = value;
-      if (i == YEARS * 12 - 1) result.endCashFlow = value;
+      if (i == 0) cashFlowDelta.begin = cashFlow;
+      if (i == YEARS * 12 - 1) cashFlowDelta.end = cashFlow;
+      cashFlow = 0;
 
       //every year push the value to the stack
       if (i % 12 == 11) {
-        data.push(value)
+        data.push(Math.round(netWorth))
       } 
 
     }
     console.log(data)
-    this.simulated.emit(result);
+    this.simulated.emit(cashFlowDelta);
     return data
+  }
+
+  private getSimulatedItems() : Item[] {
+    let items: Item[] = []
+    this.itemsList.forEach(item => {
+      let simulatedItem : Item = item.copy()
+      items.push(simulatedItem)
+    });
+    return items;
   }
 }

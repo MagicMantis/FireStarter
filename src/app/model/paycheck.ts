@@ -32,4 +32,22 @@ export class Paycheck extends Income {
     get income() : number {
         return this.salary/12;
     }
+
+    get value(): number {
+        return 0;
+    }
+
+    get monthlyValue(): number {
+        return this.income;
+    }
+
+    get monthlyROC(): number {
+        return 0;
+    } 
+
+    copy() : Paycheck {
+        return new Paycheck("", this.salary, this.period)
+    }
+
+    simulate() { }
 }
