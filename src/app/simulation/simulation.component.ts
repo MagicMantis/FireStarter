@@ -1,3 +1,4 @@
+import { Paycheck } from 'src/app/model/paycheck';
 import { DataService } from './../services/data.service';
 import { Component, OnInit } from '@angular/core';
 import { Item } from '../model/item';

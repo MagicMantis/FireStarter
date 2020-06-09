@@ -11,7 +11,7 @@
     *ngFor="let type of availableItemTypes" 
     selected 
     [color]="type.color"
-    (click)="addItem(type.type)">
+    (click)="addItem(type.component)">
     <mat-icon>{{ type.icon }}</mat-icon>{{ type.type }}
   </mat-chip>
 </mat-chip-list></div>

@@ -1,4 +1,5 @@
 import { Item } from './item';
+import { MortgageComponent } from '../items/mortgage/mortgage.component';
 
 export class Mortgage extends Item {
 
@@ -21,7 +22,7 @@ export class Mortgage extends Item {
     get homeValue() {
         return this._homeValue
     }
-    
+
     get downPayment() {
         return this._downPayment
     }
@@ -40,6 +41,10 @@ export class Mortgage extends Item {
 
     get extraPayment() {
         return this._extraPayment
+    }
+
+    get component() : any {
+        return MortgageComponent
     }
 
 }

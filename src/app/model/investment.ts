@@ -1,3 +1,4 @@
+import { PaycheckComponent } from './../items/paycheck/paycheck.component';
 import { Item } from './item'
 
 export class Investment extends Item {
@@ -25,6 +26,10 @@ export class Investment extends Item {
 
     set annualRate(x) {
         this._annualRate = x
+    }
+
+    get component() : any {
+        return PaycheckComponent
     }
 
 }

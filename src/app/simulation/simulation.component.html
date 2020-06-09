@@ -4,9 +4,8 @@
           <item-buffet></item-buffet>
       </div>
       <div class="col-sm-2">
-        <item *ngFor="let income of itemList">
-            <paycheck *ngIf="income=='Paycheck'"></paycheck>
-            <income *ngIf="income=='Income'"></income>  
+        <item *ngFor="let item of itemList">
+            <ng-container *ngComponentOutlet="item.component"></ng-container>
         </item>
       </div>
       <div class="col-lg-7">

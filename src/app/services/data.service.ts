@@ -1,9 +1,12 @@
 import { Item } from '../model/item';
-import { PaycheckComponent } from '../items/paycheck/paycheck.component';
 import { Injectable } from '@angular/core';
 import { Observable, observable, from, BehaviorSubject } from 'rxjs';
 import { take } from 'rxjs/operators';
 import {  } from 'rxjs'
+import { Income } from '../model/income';
+import { Expense } from '../model/expense';
+import { Mortgage } from '../model/mortgage';
+import { Paycheck } from '../model/paycheck';
 
 @Injectable({
   providedIn: 'root'
@@ -30,12 +33,41 @@ export class DataService {
   simulate() : any {
     let data = []
     let value = 0
-    for (let i = 0; i < 20; i++) {
+
+    //for each month in the 10 year simulation
+    for (let i = 0; i < 120; i++) {
+      console.log(value)
+
+      let income = 0
+      let expense = 0
+      console.log(typeof income, income)
       this.itemsList.forEach(item => {
-        value += 1000;
+
+        if (item instanceof Paycheck) {
+          income += item.income;
+          console.log(item.salary)
+          console.log("pay", income)
+        }
+        // add income
+        else if (item instanceof Income) {
+          income += item.income;
+        }
+        //add expense
+        else if (item instanceof Expense) {
+          expense += item.cost;
+        }
+
+        if (item instanceof Mortgage) {
+          expense += item.monthlyPayment
+        }
+
+        value += income - expense;
+
       })
       data.push(value)
+
     }
+    console.log(data)
     return data
   }
 }

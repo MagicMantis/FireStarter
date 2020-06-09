@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Income } from './../../model/income';
 import { Paycheck } from 'src/app/model/paycheck';
 
@@ -10,10 +10,11 @@ import { Paycheck } from 'src/app/model/paycheck';
 export class PaycheckComponent implements OnInit {
 
   paycheck: Paycheck;
-  salaryString: string
+  salaryString: string = '0'
 
   constructor() { 
-    this.paycheck = new Paycheck("", 0, 0) 
+    this.paycheck = new Paycheck("", 0, 0)
+    this.parse()
   }
 
   ngOnInit(): void {
