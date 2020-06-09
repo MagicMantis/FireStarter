@@ -1,12 +1,11 @@
 import { Item } from '../model/item';
 import { Injectable } from '@angular/core';
-import { Observable, observable, from, BehaviorSubject } from 'rxjs';
-import { take } from 'rxjs/operators';
-import {  } from 'rxjs'
+import { BehaviorSubject } from 'rxjs';
 import { Income } from '../model/income';
 import { Expense } from '../model/expense';
 import { Mortgage } from '../model/mortgage';
 import { Paycheck } from '../model/paycheck';
+import { EventEmitter } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +15,8 @@ export class DataService {
   items = new BehaviorSubject<Item[]>(this.itemsList);
   cast = this.items.asObservable();
 
+  updatedItem = new EventEmitter();
+
   constructor() {
 
   }
@@ -23,6 +24,10 @@ export class DataService {
   addItem(item) {
     this.itemsList.push(item)
     this.items.next(this.itemsList)
+  }
+
+  updateItem() {
+    this.updatedItem.emit('');
   }
 
   removeItem(item) {
@@ -36,17 +41,12 @@ export class DataService {
 
     //for each month in the 10 year simulation
     for (let i = 0; i < 120; i++) {
-      console.log(value)
-
       let income = 0
       let expense = 0
-      console.log(typeof income, income)
       this.itemsList.forEach(item => {
 
         if (item instanceof Paycheck) {
           income += item.income;
-          console.log(item.salary)
-          console.log("pay", income)
         }
         // add income
         else if (item instanceof Income) {

@@ -13,7 +13,7 @@ export class PaycheckComponent implements OnInit {
   salaryString: string = '0'
 
   constructor(private data: DataService) { 
-    
+
   }
 
   ngOnInit(): void {
@@ -25,6 +25,7 @@ export class PaycheckComponent implements OnInit {
 
   parse() {
     this.paycheck.salary = +this.salaryString;
+    this.data.updateItem()
   }
 
 }

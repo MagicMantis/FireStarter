@@ -23,6 +23,7 @@ import { AddItemComponent } from './layout/add-item/add-item.component';
 import { BarChartComponent } from './layout/bar-chart/bar-chart.component';
 import { MortgageComponent } from './items/mortgage/mortgage.component';
 import { ExpenseComponent } from './items/expense/expense.component';
+import { InvestComponent } from './items/invest/invest.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { ExpenseComponent } from './items/expense/expense.component';
     ItemBuffetComponent,
     BarChartComponent,
     MortgageComponent,
-    ExpenseComponent
+    ExpenseComponent,
+    InvestComponent
   ],
   imports: [
     BrowserModule,

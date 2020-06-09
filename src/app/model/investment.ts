@@ -28,8 +28,4 @@ export class Investment extends Item {
         this._annualRate = x
     }
 
-    get component() : any {
-        return PaycheckComponent
-    }
-
 }

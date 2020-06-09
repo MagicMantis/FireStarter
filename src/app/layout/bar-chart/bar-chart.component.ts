@@ -10,7 +10,7 @@ import { Label } from 'ng2-charts';
 })
 
 export class BarChartComponent implements OnInit {
-  private label = "Income Over Time";
+  private label = "Net Worth Over Time";
 
   barChartOptions: ChartOptions = {
     responsive: true
@@ -37,6 +37,10 @@ export class BarChartComponent implements OnInit {
     this.data.cast.subscribe(item => {
       this.updateData()
     })
+
+    this.data.updatedItem.subscribe(() => {
+      this.updateData()
+    });
   }
 
   getLabels() : any[] {

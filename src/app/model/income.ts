@@ -16,9 +16,4 @@ export class Income extends Item {
     set income(x){
         this._income = x;
     }
-
-    get component() : any {
-        return IncomeComponent
-    }
-
 }

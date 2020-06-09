@@ -1,6 +1,4 @@
-import { PaycheckComponent } from './../items/paycheck/paycheck.component';
 import { Income } from './income'
-import { Item } from './item'
 
 enum Period { Bi_monthly = 0, Monthly = 1, Annual = 2 }
 
@@ -33,9 +31,5 @@ export class Paycheck extends Income {
 
     get income() : number {
         return this.salary/12;
-    }
-
-    get component() : any {
-        return PaycheckComponent
     }
 }
