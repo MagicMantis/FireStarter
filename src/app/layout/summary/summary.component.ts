@@ -1,15 +1,23 @@
+import { DataService } from './../../services/data.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-summary',
+  selector: 'summary',
   templateUrl: './summary.component.html',
   styleUrls: ['./summary.component.css']
 })
 export class SummaryComponent implements OnInit {
 
-  constructor() { }
+  beginCashFlow: number;
+  endCashFlow: number;
+
+  constructor(private data: DataService) { }
 
   ngOnInit(): void {
+    this.data.simulated.subscribe(result => {
+      this.beginCashFlow = result.beginCashFlow;
+      this.endCashFlow = result.endCashFlow;
+    });
   }
 
 }

@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import { Label } from 'ng2-charts';
 
+const YEARS = 20;
+
 @Component({
   selector: 'bar-chart',
   templateUrl: './bar-chart.component.html',
@@ -45,7 +47,7 @@ export class BarChartComponent implements OnInit {
 
   getLabels() : any[] {
     let labels = []
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i <= YEARS; i++) {
       labels.push((2020+i).toString());
     }
     return labels;

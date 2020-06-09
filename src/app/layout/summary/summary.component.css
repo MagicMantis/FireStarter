@@ -1,0 +1,22 @@
+.blurb {
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+}
+
+h1 {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    font-weight: 400;
+    text-align: center;
+}
+
+h2 {
+    width: 100%;
+    padding-top: 0px;
+    padding-bottom: 15px;
+    font-weight: 400;
+    text-align: center;
+}

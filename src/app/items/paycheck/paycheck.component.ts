@@ -22,4 +22,8 @@ export class PaycheckComponent implements OnInit {
     this.data.updateItem()
   }
 
+  removeItem(item) {
+    this.data.removeItem(item)
+  }
+
 }

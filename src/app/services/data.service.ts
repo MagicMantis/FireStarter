@@ -7,6 +7,8 @@ import { Mortgage } from '../model/mortgage';
 import { Paycheck } from '../model/paycheck';
 import { EventEmitter } from '@angular/core';
 
+const YEARS = 20;
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,6 +18,7 @@ export class DataService {
   cast = this.items.asObservable();
 
   updatedItem = new EventEmitter();
+  simulated = new EventEmitter();
 
   constructor() {
 
@@ -38,13 +41,17 @@ export class DataService {
   simulate() : any {
     let data = []
     let value = 0
-    let years = 20
+    
+    let result = { 
+      beginCashFlow: 0,
+      endCashFlow: 0
+    }
 
     //push first year with initial value
     data.push(value)
 
     //for each month in the simulation
-    for (let i = 0; i < (years * 12); i++) {
+    for (let i = 0; i < YEARS * 12; i++) {
 
       // for each item in simulation
       this.itemsList.forEach(item => {
@@ -74,6 +81,9 @@ export class DataService {
 
       })
 
+      if (i == 0) result.beginCashFlow = value;
+      if (i == YEARS * 12 - 1) result.endCashFlow = value;
+
       //every year push the value to the stack
       if (i % 12 == 11) {
         data.push(value)
@@ -81,6 +91,7 @@ export class DataService {
 
     }
     console.log(data)
+    this.simulated.emit(result);
     return data
   }
 }

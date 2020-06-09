@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { DataService } from './../../services/data.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { Item } from 'src/app/model/item';
 
 @Component({
   selector: 'item',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemComponent implements OnInit {
 
-  constructor() { }
+  @Input('item') item: Item;
+
+  constructor(private data: DataService) { }
 
   ngOnInit(): void {
+  }
+
+  removeItem(item) {
+    this.data.removeItem(item);
   }
 
 }
