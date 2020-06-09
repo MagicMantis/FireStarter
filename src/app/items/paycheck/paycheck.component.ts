@@ -9,11 +9,11 @@ import { Paycheck } from 'src/app/model/paycheck';
 })
 export class PaycheckComponent implements OnInit {
 
-  @Input('paycheck') paycheck : Paycheck;
+  @Input('item') paycheck : Paycheck;
   salaryString: string = '0'
 
   constructor(private data: DataService) { 
-
+    
   }
 
   ngOnInit(): void {

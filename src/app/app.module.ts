@@ -6,9 +6,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 
-
 // Charts module
 import { ChartsModule } from 'ng2-charts'
+import { DynamicIoModule } from 'ng-dynamic-component';
 
 // My components
 import { AppComponent } from './app.component';
@@ -45,7 +45,8 @@ import { ExpenseComponent } from './items/expense/expense.component';
     BrowserAnimationsModule,
     FormsModule,
     ChartsModule,
-    MatComponentsModule
+    MatComponentsModule,
+    DynamicIoModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
