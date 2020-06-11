@@ -1,3 +1,7 @@
 .item {
     padding-top: 20px;
 }
+
+mat-icon {
+    float: right;
+}

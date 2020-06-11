@@ -57,7 +57,7 @@ export class Investment extends Item {
     }
 
     simulate() { 
-        this._initial = this._initial * (1 + this.annualRate/100)
+        this._initial = this._initial * (1 + (this.annualRate/100/12))
         this._initial += this._additionalContrib
     }
 }

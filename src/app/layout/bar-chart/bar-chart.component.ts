@@ -1,9 +1,7 @@
-import { DataService } from './../../services/data.service';
+import { DataService, YEARS } from './../../services/data.service';
 import { Component, OnInit } from '@angular/core';
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import { Label } from 'ng2-charts';
-
-const YEARS = 20;
 
 @Component({
   selector: 'bar-chart',

@@ -7,6 +7,10 @@ export class Expense extends Item {
         super(id);
         this._cost = _cost
     }
+
+    set cost(x) {
+        this._cost = x;
+    }
     
     get cost(): number {
         return this._cost

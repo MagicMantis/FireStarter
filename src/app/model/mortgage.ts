@@ -3,12 +3,12 @@ import { Item } from './item';
 export class Mortgage extends Item {
 
     constructor(id: string,
-        private _homeValue: number,
-        private _downPayment: number,
-        private _mortgageAmount: number,
-        private _annualRate: number,
-        private _monthlyPayment: number,
-        private _extraPayment: number) {
+        private _homeValue: number = 0,
+        private _downPayment: number = 0,
+        private _mortgageAmount: number = 0,
+        private _annualRate: number = 4,
+        private _monthlyPayment: number = 0,
+        private _extraPayment: number = 0) {
         super(id);
         this._homeValue = _homeValue;
         this._downPayment = _downPayment;
@@ -22,24 +22,48 @@ export class Mortgage extends Item {
         return this._homeValue
     }
 
+    set homeValue(x) {
+        this._homeValue = x;
+    }
+
     get downPayment() {
         return this._downPayment
+    }
+
+    set downPayment(x) {
+        this._downPayment = x;
     }
 
     get mortgageAmount() {
         return this._mortgageAmount
     }
 
+    set mortgageAmount(x) {
+        this._mortgageAmount = x;
+    }
+
     get annualRate() {
         return this._annualRate
+    }
+
+    set annualRate(x) {
+        this._annualRate = x;
     }
 
     get monthlyPayment() {
         return this._monthlyPayment
     }
 
+    set monthlyPayment(x) {
+        this._monthlyPayment = x;
+    }
+
     get extraPayment() {
         return this._extraPayment
+    }
+
+    set extraPayment(x) {
+        this._extraPayment = x;
     }
     
     get value(): number {
@@ -68,9 +92,18 @@ export class Mortgage extends Item {
 
     simulate() {
         this._homeValue *= (1 + (0.03/12))
-        this._mortgageAmount *= (1 + (this._annualRate / 12))
+        this._mortgageAmount *= (1 + (this._annualRate / 100 / 12))
         this._mortgageAmount -= this._monthlyPayment + this._extraPayment
         this._mortgageAmount = Math.max(0, this._mortgageAmount)
+    }
+
+    dumpLog() {
+        console.log("Home Value", this.homeValue)
+        console.log("Down payment", this.downPayment)
+        console.log("Mortgage Amount", this.mortgageAmount)
+        console.log("Annual Rate", this.annualRate)
+        console.log("Monthly Rate", this.monthlyPayment)
+        console.log("Extra Payment", this.extraPayment)
     }
 
 }

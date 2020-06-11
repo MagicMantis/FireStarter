@@ -7,14 +7,14 @@ import { Mortgage } from '../model/mortgage';
 import { Paycheck } from '../model/paycheck';
 import { EventEmitter } from '@angular/core';
 
-const YEARS = 20;
+export const YEARS = 40;
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  itemsList : Item[] = []
-  items = new BehaviorSubject<Item[]>(this.itemsList);
+  itemsList : Item[][] = []
+  items = new BehaviorSubject<Item[]>(this.itemsList[0]);
   cast = this.items.asObservable();
 
   updatedItem = new EventEmitter();
@@ -24,23 +24,23 @@ export class DataService {
 
   }
 
-  addItem(item) {
+  addItem(item, listIndex = 0) {
     this.itemsList.push(item)
-    this.items.next(this.itemsList)
+    this.items.next(this.itemsList[listIndex])
   }
 
   updateItem() {
     this.updatedItem.emit('');
   }
 
-  removeItem(item) {
+  removeItem(item, listIndex = 0) {
     this.itemsList.splice(this.itemsList.indexOf(item), 1)
-    this.items.next(this.itemsList)
+    this.items.next(this.itemsList[listIndex])
   }
 
-  simulate() : any {
+  simulate(listIndex = 0) : any {
     let data = [] //return string
-    let simItems = this.getSimulatedItems();
+    let simItems = this.getSimulatedItems(listIndex);
     console.log("SIM",simItems)
 
     // calculate net worth at the start
@@ -85,9 +85,9 @@ export class DataService {
     return data
   }
 
-  private getSimulatedItems() : Item[] {
+  private getSimulatedItems(listIndex) : Item[] {
     let items: Item[] = []
-    this.itemsList.forEach(item => {
+    this.itemsList[listIndex].forEach(item => {
       let simulatedItem : Item = item.copy()
       items.push(simulatedItem)
     });

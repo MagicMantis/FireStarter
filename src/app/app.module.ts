@@ -25,6 +25,7 @@ import { MortgageComponent } from './items/mortgage/mortgage.component';
 import { ExpenseComponent } from './items/expense/expense.component';
 import { InvestComponent } from './items/invest/invest.component';
 import { SummaryComponent } from './layout/summary/summary.component';
+import { CompareComponent } from './compare/compare.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { SummaryComponent } from './layout/summary/summary.component';
     MortgageComponent,
     ExpenseComponent,
     InvestComponent,
-    SummaryComponent
+    SummaryComponent,
+    CompareComponent
   ],
   imports: [
     BrowserModule,

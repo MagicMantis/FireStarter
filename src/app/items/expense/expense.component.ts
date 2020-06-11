@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { DataService } from './../../services/data.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { Expense } from 'src/app/model/expense';
 
 @Component({
   selector: 'app-expense',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExpenseComponent implements OnInit {
 
-  constructor() { }
+  @Input('item') expense: Expense
+  costString: string;
+
+  constructor(private data: DataService) { }
 
   ngOnInit(): void {
+  }
+
+  parse() {
+    this.expense.cost = +this.costString;
+    this.data.updateItem();
   }
 
 }
