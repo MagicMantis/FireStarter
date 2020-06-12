@@ -1,6 +1,7 @@
 <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
     <div
-    *ngFor="let item of itemList" 
+    *ngFor="let item of itemList;" 
+    @fade
     cdkDrag
     class="example-box">
         <ng-container 

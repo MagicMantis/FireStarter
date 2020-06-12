@@ -25,15 +25,18 @@ export class DataService {
 
   addItem(item, listIndex = 0) {
     this.itemsList[listIndex].push(item)  
+    console.log("Next item list add")
     this.items.next(this.itemsList)
   }
 
   updateItem() {
+    console.log("Emit update")
     this.updatedItem.emit('');
   }
 
   removeItem(item, listIndex = 0) {
     this.itemsList[listIndex].splice(this.itemsList[listIndex].indexOf(item), 1)
+    console.log("Next item list remove")
     this.items.next(this.itemsList)
   }
 

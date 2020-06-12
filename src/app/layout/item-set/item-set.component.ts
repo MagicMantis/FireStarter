@@ -12,11 +12,23 @@ import { ExpenseComponent } from '../../items/expense/expense.component';
 import { MortgageComponent } from '../../items/mortgage/mortgage.component';
 import { InvestComponent } from '../../items/invest/invest.component';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
+import { trigger, transition, animate, state, style } from '@angular/animations';
 
 @Component({
   selector: 'item-set',
   templateUrl: './item-set.component.html',
-  styleUrls: ['./item-set.component.css']
+  styleUrls: ['./item-set.component.css'],
+  animations: [
+    trigger("fade", [
+      state('void', style({ opacity: 0.2 })),
+      transition(':enter', [
+        animate(500) 
+      ]),
+      transition('* => void', [
+        animate(500, style({ opacity: 0 })),
+      ])
+    ])
+  ]
 })
 export class ItemSetComponent implements OnInit {
 
@@ -55,5 +67,4 @@ export class ItemSetComponent implements OnInit {
       console.log("failed to get component for item: ", item);
     }
   }
-
 }

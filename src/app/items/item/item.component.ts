@@ -5,7 +5,7 @@ import { Item } from 'src/app/model/item';
 @Component({
   selector: 'item',
   templateUrl: './item.component.html',
-  styleUrls: ['./item.component.css']
+  styleUrls: ['./item.component.css'],
 })
 export class ItemComponent implements OnInit {
 
@@ -18,8 +18,19 @@ export class ItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ngOnDestroy(): void {
+    console.log("destroyed?")
+  }
+
   removeItem(item) {
     this.data.removeItem(item);
   }
 
+  startAnim($event) {
+    console.log($event);
+  }
+
+  endAnim($event) {
+    console.log($event);
+  }
 }

@@ -1,5 +1,6 @@
 .item {
     padding-top: 20px;
+    display: block;
 }
 
 mat-icon {
