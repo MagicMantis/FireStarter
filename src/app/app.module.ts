@@ -1,5 +1,5 @@
 import { MatComponentsModule } from './mat-components.module';
-// angular modules
+// Angular modules
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,20 +12,26 @@ import { DynamicIoModule } from 'ng-dynamic-component';
 
 // My components
 import { AppComponent } from './app.component';
+
+// Page Components
+import { SimulationComponent } from './pages/simulation/simulation.component';
+import { CompareComponent } from './pages/compare/compare.component';
+
+// Layout and Item Components
 import { NavBarComponent } from './layout/nav-bar/nav-bar.component';
-import { SimulationComponent } from './simulation/simulation.component';
+import { SummaryComponent } from './layout/summary/summary.component';
+import { BarChartComponent } from './layout/bar-chart/bar-chart.component';
 import { ItemBuffetComponent } from './layout/item-buffet/item-buffet.component'
-import { DataService } from './services/data.service';
+import { AddItemComponent } from './layout/add-item/add-item.component';
+import { ItemComponent } from './items/item/item.component';
 import { IncomeComponent } from './items/income/income.component';
 import { PaycheckComponent } from './items/paycheck/paycheck.component';
-import { ItemComponent } from './items/item/item.component';
-import { AddItemComponent } from './layout/add-item/add-item.component';
-import { BarChartComponent } from './layout/bar-chart/bar-chart.component';
-import { MortgageComponent } from './items/mortgage/mortgage.component';
 import { ExpenseComponent } from './items/expense/expense.component';
+import { MortgageComponent } from './items/mortgage/mortgage.component';
 import { InvestComponent } from './items/invest/invest.component';
-import { SummaryComponent } from './layout/summary/summary.component';
-import { CompareComponent } from './compare/compare.component';
+
+// Services
+import { DataService } from './services/data.service';
 
 
 @NgModule({

@@ -13,8 +13,8 @@ export const YEARS = 40;
   providedIn: 'root'
 })
 export class DataService {
-  itemsList : Item[][] = []
-  items = new BehaviorSubject<Item[]>(this.itemsList[0]);
+  itemsList : Item[][] = [[], []]
+  items = new BehaviorSubject<Item[][]>(this.itemsList);
   cast = this.items.asObservable();
 
   updatedItem = new EventEmitter();
@@ -25,8 +25,8 @@ export class DataService {
   }
 
   addItem(item, listIndex = 0) {
-    this.itemsList.push(item)
-    this.items.next(this.itemsList[listIndex])
+    this.itemsList[listIndex].push(item)  
+    this.items.next(this.itemsList)
   }
 
   updateItem() {
@@ -34,8 +34,8 @@ export class DataService {
   }
 
   removeItem(item, listIndex = 0) {
-    this.itemsList.splice(this.itemsList.indexOf(item), 1)
-    this.items.next(this.itemsList[listIndex])
+    this.itemsList.splice(this.itemsList[listIndex].indexOf(item), 1)
+    this.items.next(this.itemsList)
   }
 
   simulate(listIndex = 0) : any {

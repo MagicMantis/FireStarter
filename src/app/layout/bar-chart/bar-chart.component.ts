@@ -1,7 +1,8 @@
 import { DataService, YEARS } from './../../services/data.service';
 import { Component, OnInit } from '@angular/core';
-import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
+import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Label } from 'ng2-charts';
+import { barChartOptions, barChartType, barChartColors, barChartData, barChartLegend, barChartPlugins } from './bar-chart.config';
 
 @Component({
   selector: 'bar-chart',
@@ -11,26 +12,17 @@ import { Label } from 'ng2-charts';
 
 export class BarChartComponent implements OnInit {
   private label = "Net Worth Over Time";
-
-  barChartOptions: ChartOptions = {
-    responsive: true
-  };
-  barChartLabels: Label[]
-  barChartType: ChartType = 'bar';
-  barChartLegend = true;
-  barChartPlugins = [];
-  barChartColors = [
-    {
-      backgroundColor: '#4CAF50'
-    }
-  ];
-
-  barChartData: ChartDataSets[] = [
-    { data: [], label: this.label }
-  ];
+  
+  options: ChartOptions = barChartOptions; 
+  labels: Label[];
+  chartType: ChartType = barChartType;
+  legend = barChartLegend;
+  plugins = barChartPlugins;
+  colors = barChartColors;
+  dataSets: ChartDataSets[] = barChartData;
 
   constructor(private data: DataService) {
-    this.barChartLabels = this.getLabels();
+    this.labels = this.getLabels();
   }
 
   ngOnInit() {
@@ -53,7 +45,7 @@ export class BarChartComponent implements OnInit {
 
   updateData() {
     let data = this.data.simulate()
-    this.barChartData = [
+    this.dataSets = [
       { data: data, label: this.label }
     ];
   }

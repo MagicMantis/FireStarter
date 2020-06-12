@@ -8,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class NavBarComponent implements OnInit {
   activeLink: any;
   links = [
-    { name: "Home", address: "#", isActive: false },
-    { name: "Compare", address: "#compare", isActive: false },
-    { name: "What If?", address: "#whatif", isActive: false },
-    { name: "Support", address: "#support", isActive: false },
+    { name: "Home", address: "", isActive: false },
+    { name: "Compare", address: "compare", isActive: false },
+    { name: "What If?", address: "whatif", isActive: false },
+    { name: "Support", address: "support", isActive: false },
   ];
 
   constructor() { }

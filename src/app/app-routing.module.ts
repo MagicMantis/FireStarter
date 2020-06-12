@@ -1,7 +1,7 @@
-import { SimulationComponent } from './simulation/simulation.component';
+import { SimulationComponent } from './pages/simulation/simulation.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CompareComponent } from './compare/compare.component';
+import { CompareComponent } from './pages/compare/compare.component';
 
 
 const routes: Routes = [
@@ -10,8 +10,12 @@ const routes: Routes = [
     component: SimulationComponent
   },
   {
-    path: "",
+    path: "compare",
     component: CompareComponent
+  },
+  {
+    path: "**",
+    component: SimulationComponent
   }
 ];
 

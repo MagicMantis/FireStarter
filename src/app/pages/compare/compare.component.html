@@ -10,12 +10,16 @@
             </ng-container>
         </item>
       </div>
+      <div class="col-sm-2">
+        <item *ngFor="let item of itemList2">
+            <ng-container *ngComponentOutlet="getItemType(item);
+              ndcDynamicInputs: { item: item };">
+            </ng-container>
+        </item>
+      </div>
       <div class="col-lg-7">
         <summary *ngIf="itemList1.length > 0"></summary>  
         <bar-chart></bar-chart>
-      </div>
-      <div class="col-sm-2">
-        Ads
       </div>
     </div>
   </div>

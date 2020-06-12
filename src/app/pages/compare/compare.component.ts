@@ -1,16 +1,16 @@
-import { Investment } from './../model/investment';
-import { PaycheckComponent } from './../items/paycheck/paycheck.component';
-import { Expense } from './../model/expense';
-import { Mortgage } from './../model/mortgage';
-import { Income } from './../model/income';
+import { Investment } from '../../model/investment';
+import { PaycheckComponent } from '../../items/paycheck/paycheck.component';
+import { Expense } from '../../model/expense';
+import { Mortgage } from '../../model/mortgage';
+import { Income } from '../../model/income';
 import { Paycheck } from 'src/app/model/paycheck';
-import { DataService } from './../services/data.service';
+import { DataService } from '../../services/data.service';
 import { Component, OnInit } from '@angular/core';
-import { Item } from '../model/item';
-import { IncomeComponent } from '../items/income/income.component';
-import { ExpenseComponent } from '../items/expense/expense.component';
-import { MortgageComponent } from '../items/mortgage/mortgage.component';
-import { InvestComponent } from '../items/invest/invest.component';
+import { Item } from '../../model/item';
+import { IncomeComponent } from '../../items/income/income.component';
+import { ExpenseComponent } from '../../items/expense/expense.component';
+import { MortgageComponent } from '../../items/mortgage/mortgage.component';
+import { InvestComponent } from '../../items/invest/invest.component';
 
 @Component({
   selector: 'compare',
@@ -29,7 +29,8 @@ export class CompareComponent implements OnInit {
   ngOnInit(): void {
     this.data.cast.subscribe(items => {
       console.log(items)
-      this.itemList1 = items;
+      this.itemList1 = items[0];
+      this.itemList2 = items[1];
     });
   }
   
