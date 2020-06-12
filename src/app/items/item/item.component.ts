@@ -5,7 +5,7 @@ import { Item } from 'src/app/model/item';
 @Component({
   selector: 'item',
   templateUrl: './item.component.html',
-  styleUrls: ['./item.component.css'],
+  styleUrls: ['./item.component.css']
 })
 export class ItemComponent implements OnInit {
 
