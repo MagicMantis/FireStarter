@@ -6,6 +6,7 @@ import { Expense } from '../model/expense';
 import { Mortgage } from '../model/mortgage';
 import { Paycheck } from '../model/paycheck';
 import { EventEmitter } from '@angular/core';
+import { moveItemInArray } from '@angular/cdk/drag-drop'
 
 export const YEARS = 40;
 
@@ -34,6 +35,11 @@ export class DataService {
   removeItem(item, listIndex = 0) {
     this.itemsList[listIndex].splice(this.itemsList[listIndex].indexOf(item), 1)
     this.items.next(this.itemsList)
+  }
+
+  reorderItem(oldIndex: number, newIndex: number, listIndex: number = 0) {
+    console.log(oldIndex, newIndex)
+    moveItemInArray(this.itemsList[listIndex], oldIndex, newIndex);
   }
 
   getItemCount(listIndex = 0) {

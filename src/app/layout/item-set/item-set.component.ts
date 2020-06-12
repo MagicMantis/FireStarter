@@ -11,6 +11,7 @@ import { IncomeComponent } from '../../items/income/income.component';
 import { ExpenseComponent } from '../../items/expense/expense.component';
 import { MortgageComponent } from '../../items/mortgage/mortgage.component';
 import { InvestComponent } from '../../items/invest/invest.component';
+import { CdkDragDrop } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'item-set',
@@ -28,6 +29,10 @@ export class ItemSetComponent implements OnInit {
     this.data.cast.subscribe(items => {
       this.itemList = items[this.itemListIndex];
     });
+  }
+  
+  drop(event: CdkDragDrop<Item>) {
+    this.data.reorderItem(event.previousIndex, event.currentIndex);
   }
   
   getItemType(item) {

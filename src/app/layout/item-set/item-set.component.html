@@ -1,5 +1,11 @@
-<ng-container 
+<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+    <div
     *ngFor="let item of itemList" 
-    [ngComponentOutlet]="getItemType(item)";
-    [ndcDynamicInputs]="{ item: item }">
-</ng-container>
+    cdkDrag
+    class="example-box">
+        <ng-container 
+            [ngComponentOutlet]="getItemType(item)";
+            [ndcDynamicInputs]="{ item: item }">
+        </ng-container>
+    </div>
+</div>
