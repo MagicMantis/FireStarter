@@ -20,9 +20,7 @@ export class DataService {
   updatedItem = new EventEmitter();
   simulated = new EventEmitter();
 
-  constructor() {
-
-  }
+  constructor() { }
 
   addItem(item, listIndex = 0) {
     this.itemsList[listIndex].push(item)  
@@ -34,14 +32,18 @@ export class DataService {
   }
 
   removeItem(item, listIndex = 0) {
-    this.itemsList.splice(this.itemsList[listIndex].indexOf(item), 1)
+    this.itemsList[listIndex].splice(this.itemsList[listIndex].indexOf(item), 1)
     this.items.next(this.itemsList)
+  }
+
+  getItemCount(listIndex = 0) {
+    return this.itemsList[listIndex].length
   }
 
   simulate(listIndex = 0) : any {
     let data = [] //return string
     let simItems = this.getSimulatedItems(listIndex);
-    console.log("SIM",simItems)
+    // console.log("SIM",simItems)
 
     // calculate net worth at the start
     let netWorth = 0
@@ -80,7 +82,7 @@ export class DataService {
       } 
 
     }
-    console.log(data)
+    // console.log(data)
     this.simulated.emit(cashFlowDelta);
     return data
   }

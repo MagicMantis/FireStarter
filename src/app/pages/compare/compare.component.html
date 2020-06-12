@@ -4,11 +4,8 @@
           <item-buffet></item-buffet>
       </div>
       <div class="col-sm-2">
-        <item *ngFor="let item of itemList1">
-            <ng-container *ngComponentOutlet="getItemType(item);
-              ndcDynamicInputs: { item: item };">
-            </ng-container>
-        </item>
+        <item-set [itemListIndex]="0"></item-set>
+        <item-set [itemListIndex]="1"></item-set>
       </div>
       <div class="col-sm-2">
         <item *ngFor="let item of itemList2">

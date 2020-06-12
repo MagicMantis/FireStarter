@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Label } from 'ng2-charts';
 import { barChartOptions, barChartType, barChartColors, barChartData, barChartLegend, barChartPlugins } from './bar-chart.config';
+import { typeWithParameters } from '@angular/compiler/src/render3/util';
 
 @Component({
   selector: 'bar-chart',
@@ -45,8 +46,10 @@ export class BarChartComponent implements OnInit {
 
   updateData() {
     let data = this.data.simulate()
+    let data2 = this.data.simulate(1)
     this.dataSets = [
-      { data: data, label: this.label }
+      { data: data, label: this.label },
+      { data: data2, label: this.label }
     ];
   }
 }

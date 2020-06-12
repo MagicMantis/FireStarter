@@ -26,7 +26,6 @@ export class ItemSetComponent implements OnInit {
 
   ngOnInit(): void {
     this.data.cast.subscribe(items => {
-      console.log(items)
       this.itemList = items[this.itemListIndex];
     });
   }

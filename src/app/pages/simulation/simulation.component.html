@@ -7,7 +7,7 @@
         <item-set [itemListIndex]="0"></item-set>
       </div>
       <div class="col-lg-7">
-        <summary *ngIf="itemList.length > 0"></summary>  
+        <summary *ngIf="getItemCount() > 0"></summary>  
         <bar-chart></bar-chart>
       </div>
       <div class="col-sm-2">

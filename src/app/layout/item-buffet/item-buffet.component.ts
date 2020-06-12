@@ -36,7 +36,7 @@ export class ItemBuffetComponent implements OnInit {
   }
 
   addItem(itemType) {
-    this.data.addItem(new itemType)
+    this.data.addItem(new itemType())
   }
 
 }
