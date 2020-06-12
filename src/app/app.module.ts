@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 // Charts module
 import { ChartsModule } from 'ng2-charts'
-import { DynamicIoModule } from 'ng-dynamic-component';
+import { DynamicComponentModule, DynamicIoModule } from 'ng-dynamic-component';
 
 // My components
 import { AppComponent } from './app.component';
@@ -32,6 +32,7 @@ import { InvestComponent } from './items/invest/invest.component';
 
 // Services
 import { DataService } from './services/data.service';
+import { ItemSetComponent } from './layout/item-set/item-set.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { DataService } from './services/data.service';
     ExpenseComponent,
     InvestComponent,
     SummaryComponent,
-    CompareComponent
+    CompareComponent,
+    ItemSetComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +60,8 @@ import { DataService } from './services/data.service';
     FormsModule,
     ChartsModule,
     MatComponentsModule,
-    DynamicIoModule
+    DynamicIoModule,
+    DynamicComponentModule,
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

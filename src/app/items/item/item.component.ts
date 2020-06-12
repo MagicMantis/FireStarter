@@ -10,6 +10,8 @@ import { Item } from 'src/app/model/item';
 export class ItemComponent implements OnInit {
 
   @Input('item') item: Item;
+  @Input('title') title: string;
+  @Input('subtitle') subtitle: string;
 
   constructor(private data: DataService) { }
 

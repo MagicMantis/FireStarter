@@ -21,9 +21,5 @@ export class PaycheckComponent implements OnInit {
     this.paycheck.salary = +this.salaryString;
     this.data.updateItem()
   }
-
-  removeItem(item) {
-    this.data.removeItem(item)
-  }
-
+  
 }
