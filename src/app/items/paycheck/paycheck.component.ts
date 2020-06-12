@@ -10,6 +10,7 @@ import { Paycheck } from 'src/app/model/paycheck';
 export class PaycheckComponent implements OnInit {
 
   @Input('item') paycheck : Paycheck;
+  @Input('itemListIndex') itemListIndex : number;
   salaryString: string;
 
   constructor(private data: DataService) { }

@@ -1,5 +1,7 @@
+import { ItemBuffetComponent } from './../item-buffet/item-buffet.component';
 import { DataService } from './../../services/data.service';
 import { Component, OnInit, Input } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'add-item',
@@ -9,11 +11,19 @@ import { Component, OnInit, Input } from '@angular/core';
 export class AddItemComponent implements OnInit {
 
   @Input('icon') icon: string;
+  @Input('itemListIndex') itemListIndex: number;
 
-  constructor(private data : DataService) { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
+  openDialog() {
+    this.dialog.open(ItemBuffetComponent, {
+      data: {
+        itemListIndex: this.itemListIndex
+      }
+    });
+  }
 
 }

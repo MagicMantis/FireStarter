@@ -1,5 +1,8 @@
 <!--Card content-->
-<item [item]="paycheck" [title]="'Paycheck'" [subtitle]="'Income'">
+<item [item]="paycheck" 
+    [title]="'Paycheck'" 
+    [subtitle]="'Income'"
+    [itemListIndex]="itemListIndex">
     <mat-form-field>
         <mat-label>Salary</mat-label>
         <input matInput type="text" [(ngModel)]="salaryString" (ngModelChange)="parse()">

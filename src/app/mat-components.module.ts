@@ -10,6 +10,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatDialogModule } from '@angular/material/dialog';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
 
@@ -25,6 +26,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MatChipsModule,
     MatSliderModule,
     DragDropModule,
+    MatDialogModule,
   ]
 })
 export class MatComponentsModule { }

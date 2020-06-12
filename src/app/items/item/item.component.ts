@@ -12,25 +12,14 @@ export class ItemComponent implements OnInit {
   @Input('item') item: Item;
   @Input('title') title: string;
   @Input('subtitle') subtitle: string;
+  @Input('itemListIndex') itemListIndex: number;
 
   constructor(private data: DataService) { }
 
   ngOnInit(): void {
   }
 
-  ngOnDestroy(): void {
-    console.log("destroyed?")
-  }
-
   removeItem(item) {
-    this.data.removeItem(item);
-  }
-
-  startAnim($event) {
-    console.log($event);
-  }
-
-  endAnim($event) {
-    console.log($event);
+    this.data.removeItem(item, this.itemListIndex);
   }
 }

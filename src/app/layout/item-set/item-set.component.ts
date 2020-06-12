@@ -25,9 +25,9 @@ import { itemAnimation } from './item-set.animations';
 export class ItemSetComponent implements OnInit {
 
   @Input('itemListIndex') itemListIndex : number;
-  itemList : Item[];
+  itemList : Item[];  
 
-  constructor(private data: DataService) { }
+  constructor(private data: DataService) { }  
 
   ngOnInit(): void {
     this.data.cast.subscribe(items => {
@@ -36,7 +36,7 @@ export class ItemSetComponent implements OnInit {
   }
   
   drop(event: CdkDragDrop<Item>) {
-    this.data.reorderItem(event.previousIndex, event.currentIndex);
+    this.data.reorderItem(event.previousIndex, event.currentIndex, this.itemListIndex);
   }
   
   getItemType(item) {

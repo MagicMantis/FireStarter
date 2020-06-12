@@ -10,6 +10,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class IncomeComponent implements OnInit {
 
   @Input('item') income: Income
+  @Input('itemListIndex') itemListIndex : number;
   incomeString: string;
 
   constructor(private data: DataService) { 

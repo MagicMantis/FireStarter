@@ -10,6 +10,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class InvestComponent implements OnInit {
 
   @Input('item') invest: Investment
+  @Input('itemListIndex') itemListIndex : number;
   initialString: string
   rateString: string
   additionalContribString: string

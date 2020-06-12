@@ -1,4 +1,7 @@
-<item [item]="mortgage" [title]="'Mortgage'">
+<item [item]="mortgage" 
+    [title]="'Mortgage'"
+    [itemListIndex]="itemListIndex">
+
     <mat-form-field>
         <mat-label>Home Value</mat-label>
         <input matInput type="text" [(ngModel)]="homeValueString" (ngModelChange)="parse()">
@@ -33,4 +36,5 @@
         <mat-label>Extra Payment</mat-label>
         <input matInput  type="text" [(ngModel)]="extraPaymentString" (ngModelChange)="parse()">
     </mat-form-field>
+    
 </item>

@@ -10,6 +10,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class MortgageComponent implements OnInit {
 
   @Input('item') mortgage: Mortgage
+  @Input('itemListIndex') itemListIndex : number;
   homeValueString: string
   downPaymentString: string
   mortgageAmountString: string

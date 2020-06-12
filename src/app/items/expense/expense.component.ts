@@ -10,6 +10,7 @@ import { Expense } from 'src/app/model/expense';
 export class ExpenseComponent implements OnInit {
 
   @Input('item') expense: Expense
+  @Input('itemListIndex') itemListIndex : number;
   costString: string;
 
   constructor(private data: DataService) { }

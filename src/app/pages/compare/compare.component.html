@@ -1,18 +1,10 @@
 <div class="container-fluid">
     <div class="row">
-      <div class="side-bar col-sm-1">
-          <item-buffet></item-buffet>
-      </div>
       <div class="col-sm-2">
         <item-set [itemListIndex]="0"></item-set>
-        <item-set [itemListIndex]="1"></item-set>
       </div>
       <div class="col-sm-2">
-        <item *ngFor="let item of itemList2">
-            <ng-container *ngComponentOutlet="getItemType(item);
-              ndcDynamicInputs: { item: item };">
-            </ng-container>
-        </item>
+        <item-set [itemListIndex]="1"></item-set>
       </div>
       <div class="col-lg-7">
         <summary *ngIf="itemList1.length > 0"></summary>  

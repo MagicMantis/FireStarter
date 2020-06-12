@@ -1,4 +1,7 @@
-<item [item]="income" [title]="'Income'" [subtitle]="'General'">
+<item [item]="income" 
+    [title]="'Income'" 
+    [subtitle]="'General'"
+    [itemListIndex]="itemListIndex">
     <mat-form-field>    
         <mat-label>Monthly Income</mat-label>
         <input matInput type="text" [(ngModel)]="incomeString" (ngModelChange)="parse()">

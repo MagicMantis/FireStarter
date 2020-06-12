@@ -1,6 +1,11 @@
-<item [item]="expense" [title]="'Expense'" [subtitle]="'General'">
+<item [item]="expense" 
+    [title]="'Expense'" 
+    [subtitle]="'General'"
+    [itemListIndex]="itemListIndex">
+
     <mat-form-field>    
         <mat-label>Cost</mat-label>
         <input matInput type="text" [(ngModel)]="costString" (ngModelChange)="parse()">
     </mat-form-field>
+    
 </item>
