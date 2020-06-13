@@ -28,7 +28,7 @@ export class Expense extends Item {
         return 0;
     }
 
-    copy() : Item {
+    copy() : Expense {
         return new Expense("", this.cost)
     }
 

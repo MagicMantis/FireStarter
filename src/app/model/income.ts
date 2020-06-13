@@ -3,7 +3,7 @@ import { Item } from './item'
 export class Income extends Item {
 
     constructor(id: string, 
-        private _income: number) {
+        private _income: number = 0) {
         super(id);
         this._income = _income;
     }
@@ -28,7 +28,7 @@ export class Income extends Item {
         return 0;
     }
 
-    copy() : Item {
+    copy() : Income {
         return new Income("", this.income)
     }
 
