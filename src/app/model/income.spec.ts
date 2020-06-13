@@ -1,4 +1,3 @@
-import "jasmine"
 import { Income } from './income'
 
 describe('Income', () => {
