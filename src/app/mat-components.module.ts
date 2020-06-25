@@ -12,9 +12,6 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import {MatDialogHarness} from '@angular/material/dialog/testing';
-
-
 
 @NgModule({
   exports: [
@@ -29,7 +26,6 @@ import {MatDialogHarness} from '@angular/material/dialog/testing';
     MatSliderModule,
     DragDropModule,
     MatDialogModule,
-    MatDialogHarness
   ]
 })
 export class MatComponentsModule { }

@@ -5,5 +5,6 @@
       <div>
         <a *ngFor="let link of links" mat-button [routerLink]="link.address"> {{ link.name }} </a>
       </div>
+      <button class="btn btn-primary" (click)='auth.signOut()'>Sign Out</button>
     </mat-toolbar-row>
 </mat-toolbar>
