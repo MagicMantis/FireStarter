@@ -21,7 +21,7 @@ export class MortgageComponent implements OnInit {
   constructor(private data: DataService) { }
 
   ngOnInit(): void {
-    this.APYstring = String(this.mortgage.annualRate);
+    if (this.mortgage) this.APYstring = String(this.mortgage.annualRate);
   }
 
   parse() {

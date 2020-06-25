@@ -6,7 +6,9 @@ import { Expense } from './../../model/expense';
 import { DataService } from './../../services/data.service';
 import { Component, OnInit, Input, Inject } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import {MatDialogHarness} from '@angular/material/dialog/testing';
+
 
 
 export interface ItemType {
@@ -32,15 +34,17 @@ export class ItemBuffetComponent implements OnInit {
     {type: 'Expense', icon: 'credit_card', color: 'accent', component: Expense}
   ];
 
-  constructor(@Inject(MAT_DIALOG_DATA) params: any, private data: DataService) { 
-    this.itemListIndex = params.itemListIndex;
+  constructor(public dialogRef: MatDialogRef<ItemBuffetComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any, 
+    private dataService: DataService) { 
+    this.itemListIndex = data.itemListIndex;
   }
 
   ngOnInit(): void {
   }
 
   addItem(itemType) {
-    this.data.addItem(new itemType(), this.itemListIndex)
+    this.dataService.addItem(new itemType(), this.itemListIndex)
   }
 
 }

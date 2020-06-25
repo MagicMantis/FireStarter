@@ -1,5 +1,4 @@
 import { ItemBuffetComponent } from './../item-buffet/item-buffet.component';
-import { DataService } from './../../services/data.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 

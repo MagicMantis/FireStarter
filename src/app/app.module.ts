@@ -33,6 +33,7 @@ import { InvestComponent } from './items/invest/invest.component';
 // Services
 import { DataService } from './services/data.service';
 import { ItemSetComponent } from './layout/item-set/item-set.component';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -63,7 +64,11 @@ import { ItemSetComponent } from './layout/item-set/item-set.component';
     DynamicIoModule,
     DynamicComponentModule,
   ],
-  providers: [DataService],
+  providers: [DataService,
+    { provide: MAT_DIALOG_DATA, useValue: {} },
+    { provide: MatDialogRef, useValue: {} },
+  ],
+    
   bootstrap: [AppComponent]
 })
 export class AppModule { }
