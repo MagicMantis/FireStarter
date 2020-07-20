@@ -10,8 +10,8 @@ export class NavBarComponent implements OnInit {
   activeLink: any;
   links = [
     { name: "Home", address: "", isActive: false },
+    { name: "Simulate", address: "simulation", isActive: false },
     { name: "Compare", address: "compare", isActive: false },
-    { name: "What If?", address: "whatif", isActive: false },
     { name: "Support", address: "support", isActive: false },
     { name: "Log In", address: "login", isActive: false },
     { name: "Sign Up", address: "register", isActive: false },

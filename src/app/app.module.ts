@@ -46,6 +46,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { UserComponent } from './pages/user/user.component';
 import { VerifyEmailComponent } from './pages/verify-email/verify-email.component';
+import { WelcomeComponent } from './pages/welcome/welcome.component';
 
 
 @NgModule({
@@ -68,7 +69,8 @@ import { VerifyEmailComponent } from './pages/verify-email/verify-email.componen
     LoginComponent,
     RegisterComponent,
     UserComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,

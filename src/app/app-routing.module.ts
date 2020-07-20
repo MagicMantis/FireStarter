@@ -1,3 +1,4 @@
+import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SimulationComponent } from './pages/simulation/simulation.component';
 import { NgModule } from '@angular/core';
@@ -9,13 +10,14 @@ import { VerifyEmailComponent } from './pages/verify-email/verify-email.componen
 
 
 const routes: Routes = [
-  { path: "", component: SimulationComponent },
+  { path: "", component: WelcomeComponent },
+  { path: "simulation", component: SimulationComponent },
   { path: "compare", component: CompareComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'user', component: UserComponent},
   { path: 'verify-email-address', component: VerifyEmailComponent },
-  { path: "**", component: SimulationComponent }
+  { path: "**", component: WelcomeComponent }
 ];
 
 @NgModule({
